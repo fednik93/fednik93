@@ -1,63 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root {
+  --primary-color: #0078A8;
+  --secondary-color: #86adce;
+  --accent-color: #57b3ff;
+  --text-color: #333;
+  --background-color: #f0f8ff;
+  --highlight-color: rgb(171, 148, 236);
+  --scrollbar-track-color: #86adce;
+  --scrollbar-thumb-color: #57b3ff;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f8ff;
-    color: #333;
-  }
-  ::-webkit-scrollbar {
-  width: 10px;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px; 
+  line-height: 1.8;
+  text-align: justify;
 }
-.diff-text{
-  background-color: rgb(171, 148, 236);
-  font-size: 18px;
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 28px;
+  font-weight: 700;
 }
-::-webkit-scrollbar-thumb {
-  background-color: #57b3ff;
+
+h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h4 {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #86adce;
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
 }
-  h1 {
-    text-align: center;
-    color: #444;
-  }
 
-  h2 {
-    color: #0078A8;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  h4 {
-    font-weight: normal;
-    line-height: 1.6;
-  }
+li a{
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+}
 
-  img {
-    max-width: 100%;
-  }
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
 
-  .content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+a:hover {
+  border-bottom: 2px dashed var(--primary-color);
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    margin-bottom: 10px;
-  }
-
-  a {
-    color: #0078A8;
-    text-decoration: none;
-  }
-
-  a:hover {
-    border-bottom: #0078A8 2px dashed ;
-  }
-  
+.diff-text {
+  background-color: var(--highlight-color);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
