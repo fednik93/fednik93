@@ -108,6 +108,10 @@ a {
   font-weight: 500;
 }
 
+a:hover {
+  border-bottom: 2px dashed var(--primary-color);
+}
+
 /* Список ссылок */
 ul {
   display: flex;
@@ -125,9 +129,6 @@ li {
 
 li a {
   font-family: Arial, sans-serif;
-}
-li a:hover {
-  border-bottom: 2px dashed var(--primary-color);
 }
 
 /* Блок выделенного текста */
@@ -158,7 +159,12 @@ li a:hover {
   min-width: 150px;
   text-align: center;
 }
-
+.absolute-box a {
+  color: var(--background-color);
+}
+.absolute-box a:hover {
+  text-decoration: none;
+}
 /* Фиксированное позиционирование */
 .fixed-box {
   position: fixed;
@@ -189,61 +195,257 @@ li a:hover {
 ::-webkit-scrollbar-track {
   background-color: var(--scrollbar-track-color);
 }
-form {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid var(--secondary-color);
-}
+.form-page {
+  /* Общая установка box-sizing */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-fieldset {
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  padding: 15px;
-}
+  /* Основные переменные */
+  :root {
+    --primary-color: #0078A8;
+    --secondary-color: #86adce;
+    --accent-color: #57b3ff;
+    --text-color: #333;
+    --background-color: #f0f8ff;
+    --highlight-color: rgb(171, 148, 236);
+    --scrollbar-track-color: #86adce;
+    --scrollbar-thumb-color: #57b3ff;
+  }
 
-legend {
-  font-weight: bold;
-  color: var(--primary-color);
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
+  /* Основные стили для body */
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: 500;
-}
+  /* Контентный блок */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    min-height: 600px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
 
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+  /* Заголовок */
+  h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select {
-  font-size: 1rem;
-}
+  /* Разделы и статьи */
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 1.5rem;
+  }
 
-button {a:hover {
-  border-bottom: 2px dashed var(--primary-color);
-}
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  article {
+    background-color:hsl(211, 100%, 87%);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-button:hover {
-  background-color: var(--accent-color);
-}
+  h2 {
+    color: hsl(210, 80%, 50%);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
 
+  h4 {
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: rgba(51, 51, 51, 0.85);
+  }
+
+  /* Изображение */
+  .image-container {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+  /* Ссылки */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:focus {
+    color: var(--accent-color);
+    outline: none;
+  }
+
+  /* Подсказки */
+  input::placeholder {
+    color: var(--secondary-color);
+    font-style: italic;
+  }
+
+  input:focus::placeholder {
+    color: var(--secondary-color);
+    font-style: italic;
+  }
+
+  /* Стиль выделения */
+  ::selection {
+    background-color: var(--accent-color);
+    color: white;
+  }
+
+  /* Список ссылок */
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0;
+    margin-top: 1rem;
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  li a {
+    font-family: Arial, sans-serif;
+  }
+
+  /* Радио и чекбоксы */
+  input[type="checkbox"]:checked + label {
+    text-decoration: line-through; /* Перечеркиваем текст для отмеченных чекбоксов */
+  }
+
+  input[type="checkbox"]:not(:checked) + label {
+    font-weight: normal;
+  }
+
+  /* Выравнивание чекбоксов и текста */
+  #contact-time label {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    gap: 10px; /* Пространство между чекбоксом и текстом */
+    margin-bottom: 10px;
+  }
+  #contact-time label:nth-child(even) {
+    background-color: #e0f7fa; /* Светло-голубой фон для четных элементов */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Нечетные элементы списка */
+  #contact-time label:nth-child(odd) {
+    background-color: #fff9c4; /* Светло-желтый фон для нечетных элементов */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  /* Стилизация чекбоксов */
+  input[type="checkbox"] {
+    margin: 0; /* Убираем отступы */
+  }
+
+  /* Обязательные поля */
+  input[required] {
+    border: 2px solid var(--primary-color);
+  }
+
+  /* Формы */
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+  }
+
+  fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select {
+    font-size: 1rem;
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: var(--accent-color);
+  }
+
+  button:focus {
+    outline: 2px solid var(--primary-color);
+  }
+
+  /* Стиль для header */
+}
 header {
   position: absolute;
   top: 10px;
