@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Демонстрация CSS</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1b1b1b;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Убираем центрирование, чтобы избежать выхода за пределы */
+      min-height: 100vh; /* Обеспечивает высоту на весь экран */
+      overflow-y: auto; /* Включаем прокрутку, если контента больше, чем можно уместить на экране */
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .example {
+      margin: 50px 0; /* Увеличен отступ между карточками */
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%; /* Ограничиваем ширину карточки */
+      max-width: 300px; /* Устанавливаем максимальную ширину карточки */
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+    }
+
+    /* Линейный градиент */
+    .linear-gradient {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+
+    /* Радиальный градиент */
+    .radial-gradient {
+      background: radial-gradient(circle, #ff7e5f, #feb47b);
+    }
+
+    /* Конический градиент */
+    .conic-gradient {
+      background: conic-gradient(from 90deg, #ff7e5f, #feb47b);
+    }
+
+    /* 2D-преобразования */
+    .rotate {
+      background: #ff7e5f;
+      transform: rotate(45deg);
+    }
+
+    .scale {
+      background: #feb47b;
+      transform: scale(1.2);
+    }
+
+    /* 3D-преобразования */
+    .rotate-3d {
+      background: #ff7e5f;
+      transform: rotate3d(1, 1, 0, 45deg);
+    }
+
+    .perspective {
+      background: #feb47b;
+      transform: perspective(500px) rotateY(45deg);
+    }
+
+    /* Переходы */
+    .transition-scale {
+      background: #ff7e5f;
+      transition: transform 0.5s ease;
+    }
+
+    .transition-scale:hover {
+      transform: scale(1.2);
+    }
+
+    .transition-opacity {
+      background: #feb47b;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .transition-opacity:hover {
+      opacity: 0.5;
+    }
+
+    /* Для мелких экранов уменьшаем размеры карточек */
+    @media (max-width: 768px) {
+      .example {
+        width: 90%;
+        margin: 30px 0; /* Уменьшаем отступы для мобильных устройств */
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Примеры CSS свойств</h1>
+
+  <div class="example linear-gradient">
+    <p>Линейный градиент</p>
+  </div>
+
+  <div class="example radial-gradient">
+    <p>Радиальный градиент</p>
+  </div>
+
+  <div class="example conic-gradient">
+    <p>Конический градиент</p>
+  </div>
+
+  <div class="example rotate">
+    <p>2D Преобразование: Поворот</p>
+  </div>
+
+  <div class="example scale">
+    <p>2D Преобразование: Масштабирование</p>
+  </div>
+
+  <div class="example rotate-3d">
+    <p>3D Преобразование: Поворот 3D</p>
+  </div>
+
+  <div class="example perspective">
+    <p>3D Преобразование: Перспектива</p>
+  </div>
+
+  <div class="example transition-scale">
+    <p>Переход: Масштабирование</p>
+  </div>
+
+  <div class="example transition-opacity">
+    <p>Переход: Изменение прозрачности</p>
+  </div>
+
+</body>
+</html>
